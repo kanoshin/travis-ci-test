@@ -6,7 +6,7 @@ jobs:
     include:
         - stage: test
           script:
-              - echo "Hello ${node_js}!" > 1.txt
+              - echo "Hello!" > 1.txt
           if: node_js = 14 
           workspaces: 
               create: 
