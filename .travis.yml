@@ -19,13 +19,15 @@ jobs:
       script:
         - cat foo.txt || true
 
-workspaces:
-    use: ws1
-
 script:
-    - cat foo.txt || true
+    - echo "foo" > foo.txt
+
+workspaces:
+	create:
+		name: ws1
+		paths:
+		- foo.txt
 
 stages:
-  - warm_cache
-  - use_cache
   - test
+  - use_cache
