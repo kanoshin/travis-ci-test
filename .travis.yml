@@ -3,6 +3,9 @@ node_js:
   - "12"
   - "14"
 
+script:
+    - cat foo.txt || true
+
 jobs:
   include:
     - stage: warm_cache
@@ -22,3 +25,4 @@ jobs:
 stages:
   - warm_cache
   - use_cache
+  - test
