@@ -19,12 +19,6 @@ jobs:
       script:
         - cat foo.txt || true
 
-workspaces:
-	create:
-		name: ws1
-		paths:
-		- foo.txt
-
 script:
     - echo "foo" > foo.txt
 
