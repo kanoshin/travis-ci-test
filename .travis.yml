@@ -1,10 +1,4 @@
 language: node_js
-node_js:
-  - "12"
-  - "14"
-
-script:
-    - cat foo.txt || true
 
 jobs:
   include:
@@ -21,6 +15,16 @@ jobs:
         use: ws1
       script:
         - cat foo.txt || true
+
+node_js:
+  - "12"
+  - "14"
+
+workspaces:
+    use: ws1
+	
+script:
+    - cat foo.txt || true
 
 stages:
   - warm_cache
