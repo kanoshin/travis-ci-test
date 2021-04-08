@@ -1,4 +1,7 @@
 language: node_js
+node_js:
+  - "12"
+  - "14"
 
 jobs:
   include:
@@ -16,13 +19,9 @@ jobs:
       script:
         - cat foo.txt || true
 
-node_js:
-  - "12"
-  - "14"
-
 workspaces:
     use: ws1
-	
+
 script:
     - cat foo.txt || true
 
