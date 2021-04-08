@@ -1,11 +1,10 @@
-language: node_js
-node_js:
-  - "12"
-  - "14"
-
 jobs:
   include:
     - stage: warm_cache
+	  language: node_js
+      node_js:
+		- "12"
+		- "14"
       script:
         - echo "foo" > foo.txt
       workspaces:
@@ -19,9 +18,6 @@ jobs:
       script:
         - cat foo.txt || true
 
-script:
-    - echo "foo" > foo.txt
-
 stages:
-  - test
+  - warm_cache
   - use_cache
