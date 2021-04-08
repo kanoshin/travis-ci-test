@@ -2,24 +2,22 @@ language: node_js
 node_js:
     - 12
     - 14
+
 jobs:
     include:
-        - stage: test
+        - stage: Testing
           script: 
               - echo hello > 1.txt
-          workspaces: 
-              if: node_js = 14 
+          workspaces:
               create: 
                   name: bundle 
                   paths: .
-        - stage: deploy
+        - stage: Deployment
           workspaces:
               use: bundle
           deploy:
               cleanup: false
               provider: script
-              script: cat 1.txt
-stages:
-    - test
-    - name: deploy
-      if: node_js = 14
+              script:
+                  - cat 1.txt
+
