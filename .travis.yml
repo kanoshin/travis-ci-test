@@ -5,9 +5,10 @@ node_js:
 jobs:
     include:
         - stage: test
-          script: echo hello {node_js} > 1.txt
+          script: 
+              - echo hello > 1.txt
           workspaces: 
-		      if: node_js = 14 
+              if: node_js = 14 
               create: 
                   name: bundle 
                   paths: .
