@@ -1,9 +1,7 @@
 language: node_js
-
 node_js:
     - 12
     - 14
-
 jobs:
     include:
         - stage: test
@@ -21,8 +19,7 @@ jobs:
               cleanup: false
               provider: script
               script: cat 1.txt
-
 stages:
     - test
-    - deploy
+    - name: deploy
       if: node_js = 14
