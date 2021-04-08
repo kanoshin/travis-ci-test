@@ -12,12 +12,4 @@ jobs:
               create: 
                   name: bundle 
                   paths: .
-        - stage: Deployment
-          workspaces:
-              use: bundle
-          deploy:
-              cleanup: false
-              provider: script
-              script:
-                  - cat 1.txt
 
