@@ -1,10 +1,10 @@
 jobs:
   include:
     - stage: warm_cache
-	  language: node_js
+      language: node_js
       node_js:
-		- "12"
-		- "14"
+          - 12
+          - 14
       script:
         - echo "foo" > foo.txt
       workspaces:
