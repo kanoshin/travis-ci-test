@@ -1,15 +1,15 @@
-language: node_js
-node_js:
-    - 12
-    - 14
-
 jobs:
-    include:
-        - stage: Testing
-          script: 
-              - echo hello > 1.txt
-          workspaces:
-              create: 
-                  name: bundle 
-                  paths: .
-
+  include:
+    - stage: warm_cache
+      script:
+        - echo "foo" > foo.txt
+      workspaces:
+        create:
+          name: ws1
+          paths:
+            - foo.txt
+    - stage: use_cache
+      workspaces:
+        use: ws1
+      script:
+        - cat foo.txt || true
