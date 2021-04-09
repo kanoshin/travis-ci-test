@@ -1,23 +1,15 @@
-jobs:
-  include:
-    - stage: warm_cache
-      language: node_js
-      node_js:
-          - 12
-          - 14
-      script:
-        - echo "foo" > foo.txt
-      workspaces:
-        create:
-          name: ws1
-          paths:
-            - foo.txt
-    - stage: use_cache
-      workspaces:
-        use: ws1
-      script:
-        - cat foo.txt || true
+language: node_js
+node_js:
+	- 12
+	- 14
 
-stages:
-  - warm_cache
-  - use_cache
+script:
+	- echo "foo" > foo.txt
+
+deploy:
+	cleanup: false
+	provider: script
+	script: cat foo.txt || true
+	on:
+		branch: master
+		node_js: 12
