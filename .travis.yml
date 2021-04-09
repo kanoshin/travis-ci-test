@@ -16,7 +16,7 @@ deploy:
   script: 
     - cat foo.txt || true
   on:
-    condition: os = linux
+    condition: $TRAVIS_OS_NAME = linux
     tags: true
     branch: master
     node_js: 12
