@@ -9,7 +9,8 @@ script:
 deploy:
   cleanup: false
   provider: script
-  script: cat foo.txt || true
+  script: 
+    - cat foo.txt || true
   on:
     branch: master
     node_js: 12
