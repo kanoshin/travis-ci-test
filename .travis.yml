@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-	- 12
-	- 14
+  - 12
+  - 14
 
 script:
-	- echo "foo" > foo.txt
+  - echo "foo" > foo.txt
 
 deploy:
-	cleanup: false
-	provider: script
-	script: cat foo.txt || true
-	on:
-		branch: master
-		node_js: 12
+  cleanup: false
+  provider: script
+  script: cat foo.txt || true
+  on:
+    branch: master
+    node_js: 12
