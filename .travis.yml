@@ -19,4 +19,4 @@ deploy:
     tags: true
     branch: master
     node_js: 12
-	condition: '${TRAVIS_OS_NAME} = linux'
+	condition: '${TRAVIS_OS_NAME} = "linux"'
