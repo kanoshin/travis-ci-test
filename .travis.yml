@@ -17,5 +17,4 @@ deploy:
     - cat foo.txt || true
   on:
     branch: master
-    node_js: 12
 	os: linux
