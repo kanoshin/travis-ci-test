@@ -16,8 +16,8 @@ deploy:
   script: 
     - cat foo.txt || true
   on:
+    condition: os = linux
     tags: true
     branch: master
     node_js: 12
-	condition: os = linux
 	
